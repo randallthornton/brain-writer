@@ -11,12 +11,12 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col bg-gradient-to-b from-slate-800 to-emerald-950 text-white">
-      <NavMenu />
+      <NavMenu session={session} />
       <div className="container mx-auto flex max-w-screen-md flex-col items-center justify-center gap-12  px-4 py-16">
         <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-          Brain Writing!
+          Brain Writing
         </h1>
-        <p className="text-2xl text-center">
+        <p className="text-center text-2xl">
           A collaborative writing tool for creative minds
         </p>
       </div>
