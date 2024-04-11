@@ -1,3 +1,4 @@
+import { List, ListItemButton, ListItemText } from "@mui/material";
 import { api } from "~/trpc/server";
 
 export default async function WritingSessions() {
@@ -5,12 +6,13 @@ export default async function WritingSessions() {
 
   return sessions.length ? (
     <div>
-      <h1>Your Sessions</h1>
-      <ul>
+      <List className="gap-4">
         {sessions.map((session) => (
-          <li key={session.id}>{session.title}</li>
+          <ListItemButton divider key="session" className="rounded-lg hover:bg-emerald-700">
+            <ListItemText primary={session.title} secondary={session.createdAt.toLocaleDateString()} />
+          </ListItemButton>
         ))}
-      </ul>
+      </List>
     </div>
   ) : (
     <p>You have no sessions yet.</p>
