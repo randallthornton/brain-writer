@@ -17,7 +17,10 @@ export const writtingSessionRouter = createTRPCRouter({
       });
     }),
 
-  getUserSessions: protectedProcedure.query(({ ctx }) => {
+  getUserSessions: protectedProcedure.query(async ({ ctx }) => {
+
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     return ctx.db.writingSession.findMany({
       orderBy: { createdAt: "desc" },
       where: { createdBy: { id: ctx.session.user.id } },
