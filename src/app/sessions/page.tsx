@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import WritingSessions from "./sessions";
+import WritingSessions from "./writing-sessions";
 
 export default async function Sessions() {
   return (
